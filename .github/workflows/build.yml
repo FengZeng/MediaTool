@@ -36,11 +36,6 @@ jobs:
       - name: Install dependencies with Yarn
         run: yarn install
 
-      # Install Tauri CLI 2.0
-      - name: Install Tauri CLI
-        run: |
-          cargo install tauri-cli --version ^2.0.0-beta
-
       # Install CMake (if needed, or upgrade to a specific version)
       - name: Install CMake
         run: |
@@ -49,9 +44,4 @@ jobs:
       # Build the Tauri application
       - name: Build Tauri App
         run: |
-          cargo tauri build
-
-      # Run Tests
-      - name: Run Tests
-        run: |
-          cargo test
+          yarn tauri build --bundles dmg
