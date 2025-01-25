@@ -1,0 +1,12 @@
+[package]
+    name = "libmediatool"
+    version = "0.1.0"
+    edition = "2021"
+    build = "build.rs"
+
+[build-dependencies]
+    num_cpus = "1"
+
+[dependencies]
+    # If you are using cxx crate
+    # cxx = "1.0"

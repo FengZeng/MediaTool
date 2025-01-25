@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>MediaTool</title>
+    </head>
+
+    <body>
+        <div id="inputOverlay" class="overlay">
+            <div id="urlInputDiv" class="url-input-container">
+                <input type="text" id="url-input" placeholder="Input URL" />
+                <button id="url-send">
+                    <svg
+                        aria-hidden="true"
+                        height="16"
+                        viewBox="0 0 16 16"
+                        version="1.1"
+                        width="16"
+                        data-view-component="true"
+                        class="octicon octicon-paper-airplane Button-visual"
+                    >
+                        <path
+                            d="M.989 8 .064 2.68a1.342 1.342 0 0 1 1.85-1.462l13.402 5.744a1.13 1.13 0 0 1 0 2.076L1.913 14.782a1.343 1.343 0 0 1-1.85-1.463L.99 8Zm.603-5.288L2.38 7.25h4.87a.75.75 0 0 1 0 1.5H2.38l-.788 4.538L13.929 8Z"
+                        ></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <button
+            id="openFileUrlButton"
+            style="display: none"
+            type="button"
+            data-view-component="true"
+            class="OpenFileUrlButton Parent"
+        >
+            <span id="openFileSpan" class="Child">
+                <svg
+                    aria-hidden="true"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    version="1.1"
+                    width="16"
+                    data-view-component="true"
+                    class="octicon"
+                >
+                    <path
+                        d="M7.75 2a.75.75 0 0 1 .75.75V7h4.25a.75.75 0 0 1 0 1.5H8.5v4.25a.75.75 0 0 1-1.5 0V8.5H2.75a.75.75 0 0 1 0-1.5H7V2.75A.75.75 0 0 1 7.75 2Z"
+                    ></path>
+                </svg>
+            </span>
+            <span id="openUrlSpan" class="Child"
+                ><svg
+                    aria-hidden="true"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    version="1.1"
+                    width="16"
+                    data-view-component="true"
+                    class="octicon"
+                >
+                    <path
+                        d="M8 9a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3ZM1.5 9a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Zm13 0a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Z"
+                    ></path></svg
+            ></span>
+        </button>
+        <div id="loading-overlay">
+            <div class="loader"></div>
+        </div>
+        <h3 id="MediaPath"></h3>
+        <pre id="MediaInfo"></pre>
+        <div id="app">
+            <button id="openFileButton" class="open-file-button">
+                <img id="imgLoad" src="/add.png" alt="Icon" />
+                <p>Open a File</p>
+            </button>
+        </div>
+        <script type="module" src="/src/main.js" defer></script>
+    </body>
+</html>

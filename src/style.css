@@ -1,0 +1,231 @@
+:root {
+    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    font-weight: 400;
+
+    color-scheme: light dark;
+    color: rgba(255, 255, 255, 0.87);
+    background-color: #2f2f2f;
+
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    /* border: 3px solid rgba(0, 254, 0, 0.2); */
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    place-items: center;
+    min-width: 320px;
+    min-height: 100vh;
+}
+
+#app {
+    /* border: 3px solid rgba(240, 0, 0, 0.2); */
+    max-width: 1280px;
+    margin-top: 50px;
+    padding: 2rem;
+    text-align: center;
+}
+
+.open-file-button {
+    background-color: transparent;
+    border-radius: 8px;
+    border: 2px solid transparent;
+    color: gray;
+    padding: 100px 200px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-color: darkgrey;
+    border-style: dashed;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.open-file-button:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+    border-color: black;
+    border-style: dashed;
+}
+
+.open-file-button img {
+    max-width: 100%;
+    width: 120px;
+    height: auto;
+}
+
+.open-file-button p {
+    margin-bottom: auto;
+    font-size: 30px;
+}
+
+#loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.loader {
+    border: 7px solid #2f2f2f;
+    border-top: 7px solid #b0b0b0;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+#loading-overlay.hidden {
+    display: none;
+}
+
+#MediaPath {
+    align-self: flex-start;
+    text-align: left;
+    padding-left: 50px;
+    padding-top: 5px;
+    margin-bottom: 0.5em;
+    font-weight: bold;
+    color: #808080;
+}
+
+#MediaInfo {
+    align-self: flex-start;
+    text-align: left;
+    padding-left: 50px;
+    /* padding-right: 50px; */
+    /* padding-top: 10px; */
+    /*white-space: pre-wrap; */
+    word-wrap: break-word;
+    /*max-height: 80vh;*/
+    /* border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd; */
+}
+
+.OpenFileUrlButton.Parent {
+    position: fixed;
+    top: 20px;
+    right: 40px;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    font-weight: 500;
+    color: #c9d1d9;
+    background-color: #21262d;
+    border: 1px solid rgba(240, 246, 252, 0.1);
+    border-radius: 6px;
+    cursor: pointer;
+    white-space: nowrap;
+    transition:
+        background-color 0.2s ease-in-out,
+        border-color 0.2s ease-in-out;
+}
+
+.OpenFileUrlButton.Parent:hover {
+    background-color: #30363d;
+    border-color: rgba(240, 246, 252, 0.15);
+}
+
+.OpenFileUrlButton.Parent:active {
+    background-color: #282e33;
+    border-color: rgba(240, 246, 252, 0.2);
+    box-shadow: inset 0 0.15em 0.3em rgba(27, 31, 35, 0.15);
+}
+
+.OpenFileUrlButton.Parent:focus {
+    outline: 2px solid #0366d6;
+    outline-offset: -2px;
+}
+
+.octicon {
+    display: inline-block;
+    fill: currentColor;
+    vertical-align: text-bottom;
+}
+
+#openFileSpan {
+    padding: 10px 14px;
+    ustifycontent: center;
+}
+#openUrlSpan {
+    padding: 10px 12px;
+    ustifycontent: center;
+}
+
+/*--------------------------------------*/
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    pointer-events: none;
+}
+
+.overlay .url-input-container {
+    pointer-events: auto;
+}
+
+.url-input-container {
+    position: fixed;
+    top: 60px;
+    display: flex;
+    align-items: center;
+    border: 1px solid #d0d7de;
+    border-radius: 6px;
+    padding: 5px;
+    width: 50%;
+    display: flex;
+    background-color: transparent;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    pointer-events: none;
+}
+
+#url-input {
+    flex-grow: 1;
+    border: none;
+    outline: none;
+    padding: 5px;
+    background-color: transparent;
+}
+
+#url-send {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+}

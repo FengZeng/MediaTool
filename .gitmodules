@@ -1,0 +1,10 @@
+[submodule "src-tauri/libmediatool/cpp_src/MediaInfoLib"]
+	path = src-tauri/libmediatool/cpp_src/MediaInfoLib
+	url = https://github.com/MediaArea/MediaInfoLib.git
+[submodule "src-tauri/libmediatool/cpp_src/ZenLib"]
+	path = src-tauri/libmediatool/cpp_src/ZenLib
+	url = https://github.com/MediaArea/ZenLib.git
+[submodule "src-tauri/libmediatool/cpp_src/zlib"]
+	path = src-tauri/libmediatool/cpp_src/zlib
+	url = https://github.com/madler/zlib
+    ignore = dirty
