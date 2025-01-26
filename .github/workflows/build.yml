@@ -4,6 +4,9 @@ on:
   push:
     branches:
       - main
+  release:
+    types:
+      - created
 
 jobs:
   build:
@@ -47,3 +50,12 @@ jobs:
       - name: Build Tauri App
         run: |
           yarn tauri build --bundles dmg
+
+
+      - name: Upload DMG to release
+        if: github.event_name == 'release' && github.event.action == 'created'
+        uses: softprops/action-gh-release@v1
+        with:
+          files: src-tauri/target/release/bundle/dmg/*.dmg
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
