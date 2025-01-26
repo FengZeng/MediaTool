@@ -4,9 +4,8 @@ on:
   push:
     branches:
       - main
-  release:
-    types:
-      - created
+    tags:
+      - 'v*'
 
 jobs:
   build:
@@ -51,9 +50,17 @@ jobs:
         run: |
           yarn tauri build --bundles dmg
 
+  release:
+    runs-on: macos-latest
+    needs: build
+    if: startsWith(github.ref, 'refs/tags/v')  # Ensure this job only runs on tags starting with "v"
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          submodules: true
 
-      - name: Upload DMG to release
-        if: github.event_name == 'release' && github.event.action == 'created'
+      - name: Create Release
         uses: softprops/action-gh-release@v1
         with:
           files: src-tauri/target/release/bundle/dmg/*.dmg
