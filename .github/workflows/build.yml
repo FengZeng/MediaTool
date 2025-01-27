@@ -51,5 +51,5 @@ jobs:
           body: "Release of MediaTool.app v1.0.1."
           files: |
             src-tauri/target/release/bundle/dmg/*.dmg
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
