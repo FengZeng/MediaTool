@@ -8,9 +8,15 @@ A <a href="https://github.com/MediaArea/MediaInfoLib">MediaInfo</a> GUI based on
 
 ## Install
 
-Download from [release](https://github.com/FengZeng/MediaTool/releases).
+Download from [release page](https://github.com/FengZeng/MediaTool/releases).
 
 Or you can build it yourself. Support macOS 10.15+
+
+### FAQ
+
+#### 1. **macOS** "MediaTool" is damaged and can't be opened
+
+open the terminal and run `sudo xattr -r -d com.apple.quarantine /Applications/MediaTool.app`
 
 ## Development
 
@@ -43,7 +49,7 @@ yarn tauri build --bundles app
 
 ## Disclaimer
 
-This is a learning project for Rust practice.
+This is a learning project for Rust and Tauri practice.
 
 ## Contributions
 
