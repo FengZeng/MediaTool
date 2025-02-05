@@ -1,6 +1,15 @@
+<h1 align="center">
+  <img src="./src/assets/image/logo.png" alt="Clash" width="128" />
+  <br>
+  MediaTools
+  <br>
+</h1>
 <h3 align="center">
 A <a href="https://github.com/MediaArea/MediaInfoLib">MediaInfo</a> GUI based on <a href="https://github.com/tauri-apps/tauri">tauri</a>.
 </h3>
+
+## Preview
+![cover](./docs/images/screenshot.png)
 
 ## Features
 

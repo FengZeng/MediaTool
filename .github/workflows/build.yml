@@ -3,7 +3,7 @@ name: CI Workflow
 on:
   push:
     tags:
-      - 'v*'
+      - "v*"
 
 jobs:
   build:
@@ -48,7 +48,7 @@ jobs:
         with:
           name: Release ${{ github.ref_name }}
           tag_name: ${{ github.ref }}
-          body: "Release of MediaTool.app v1.0.1."
+          body: "Release of MediaTool.app v1.0.2."
           files: |
             src-tauri/target/release/bundle/dmg/*.dmg
         env:
